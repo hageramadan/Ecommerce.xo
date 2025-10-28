@@ -3,12 +3,12 @@ import { ProductIn } from "@/Types/ProductIn";
 import PriceComponent from "./PriceComponent";
 import ImageComponent from "./ImageComponent";
 
-export default function InStockCard({ image, title, price, stock }: ProductIn) {
+export default function InStockCard({ img, title, price }: ProductIn) {
   return (
     <>
       <div className="flex flex-col border rounded-xl border-gray-200 pb-2 px-2 gap-3">
         <div className="relative w-full h-[260px] md:h-[250px]">
-          <ImageComponent image={image} />
+          <ImageComponent image={img} />
           <HearComponent />
           <div className="absolute bottom-1 start-0 text-white bg-[#62bd7c] rounded text-sm w-fit px-1.5">
             <p>متوفر</p>

@@ -9,7 +9,7 @@ export default function HearComponent() {
     <>
       <div
             onClick={() => setLiked(!liked)}
-            className="absolute top-1 end-0 shadow rounded-full bg-white/35 w-fit px-2 py-1.5 cursor-pointer"
+            className="absolute top-1 end-0 shadow rounded-full bg-white/50 w-fit px-2 py-1.5 cursor-pointer me-1"
           >
             <TfiHeart
               size={17}

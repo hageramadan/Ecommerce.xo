@@ -1,5 +1,5 @@
 export interface ProductIn{
-  image:string,
+  img:string,
   title:string,
   description?:string,
   stock?:number,

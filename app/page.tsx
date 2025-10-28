@@ -6,7 +6,7 @@ import InStockSlider from "@/components/InStockSlider";
 import ProductCard from "@/components/ProductCard";
 import ShowAll from "@/components/ShowAll";
 import SliderComponent from "@/components/SliderComponent";
-import { cates2, inStock, pro, sliderImages, sliderLinks , Ess , Desc, sliderImages2, inStock2} from "@/Types/data";
+import { cates2, inStock, pro, sliderImages, sliderLinks , Ess , Desc, sliderImages2, inStock2, Desc2, inStock3} from "@/Types/data";
 
 
 export default function Home() {
@@ -68,7 +68,18 @@ export default function Home() {
        <Discount src="/images/d4.jpg" href="/" />
         <ShowAll title="اكتشف مجموعتنا من الترابيزات" Anchor="مشاهدة المزيد"link="/"/>
        <InStockSlider inStock={inStock2} CardComponent={ProductCard}/>
-
+         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7">
+          جدّد قعدة بيتك دلوقتي
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
+          {Desc2.map((des, index) => (
+            <div className="flex" key={index}>
+              <Discount src={des.img} href={des.href} />
+            </div>
+          ))}
+        </div>
+        <ShowAll title="وحدة تلفزيون تناسب كل مساحة" Anchor="مشاهدة المزيد"link="/"/>
+       <InStockSlider inStock={inStock3} CardComponent={ProductCard}/>
       </div>
     </>
   );
