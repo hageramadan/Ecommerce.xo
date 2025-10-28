@@ -85,7 +85,7 @@ export default function InStockSlider({ inStock , CardComponent }: InStockSlider
       >
         {inStock.map((des, index) => (
           <SwiperSlide key={index}>
-             <CardComponent img={des.img} title={des.title} price={des.price} stock={des.stock}  oldPrice={des.oldPrice}  discount={des.discount}/>
+             <CardComponent id={des.id} img={des.img} title={des.title} price={des.price} stock={des.stock}  oldPrice={des.oldPrice}  discount={des.discount}/>
           </SwiperSlide>
         ))}
       </Swiper>

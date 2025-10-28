@@ -19,6 +19,7 @@ export const cates = [
 
  export const inStock = [
     {
+      id:1,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
@@ -26,105 +27,83 @@ export const cates = [
       href: "/",
       stock:1
     },
-      {
+         {
+      id:2,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },
-      {
-      img: "/images/s1.jpg",
-      title:
-        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
-      price: "2,999",
-      href: "/",
-      stock:0
-    },
-      {
+    },   {
+      id:3,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },
-      {
+    },   {
+      id:4,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:5,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:6,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:7,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:8,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:9,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
+    },   {
+      id:10,
       img: "/images/s1.jpg",
       title:
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
       stock:1
-    },  {
-      img: "/images/s1.jpg",
-      title:
-        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
-      price: "2,999",
-      href: "/",
-      stock:1
-    },  {
-      img: "/images/s1.jpg",
-      title:
-        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
-      price: "2,999",
-      href: "/",
-      stock:1
-    },  {
-      img: "/images/s1.jpg",
-      title:
-        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
-      price: "2,999",
-      href: "/",
-      stock:1,
-      
     },
   ];
    export const inStock2 = [
     {
+      id:11,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -135,6 +114,29 @@ export const cates = [
       stock:1
     },
     {
+      id:12,
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+  {
+      id:13,
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+   {
+      id:14,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -145,6 +147,7 @@ export const cates = [
       stock:1
     },
     {
+      id:15,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -155,6 +158,7 @@ export const cates = [
       stock:1
     },
     {
+      id:16,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -165,6 +169,7 @@ export const cates = [
       stock:1
     },
     {
+      id:17,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -175,6 +180,7 @@ export const cates = [
       stock:1
     },
     {
+      id:18,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -185,6 +191,7 @@ export const cates = [
       stock:1
     },
     {
+      id:19,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -195,6 +202,7 @@ export const cates = [
       stock:1
     },
     {
+      id:20,
       img: "/images/s2.jpg",
       title:
       "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
@@ -204,30 +212,10 @@ export const cates = [
       href: "/",
       stock:1
     },
-    {
-      img: "/images/s2.jpg",
-      title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
-      href: "/",
-      stock:1
-    },
-    {
-      img: "/images/s2.jpg",
-      title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
-      href: "/",
-      stock:1
-    },
-   
   ];
    export const inStock3 = [
     {
+      id:21,
       img: "/images/p3.jpg",
       title:
       "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
@@ -238,87 +226,7 @@ export const cates = [
       stock:1
     },
     {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
-      img: "/images/p3.jpg",
-      title:
-      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
-      price: "9,989",
-      oldPrice:"19,215",
-      discount:49,
-      href: "/",
-      stock:1
-    }, {
+      id:22,
       img: "/images/p3.jpg",
       title:
       "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
@@ -328,10 +236,43 @@ export const cates = [
       href: "/",
       stock:1
     },
-   
+     {
+      id:23,
+      img: "/images/p3.jpg",
+      title:
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
+      href: "/",
+      stock:1
+    },
+ {
+      id:24,
+      img: "/images/p3.jpg",
+      title:
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
+      href: "/",
+      stock:1
+    },
+    {
+      id:25,
+      img: "/images/p3.jpg",
+      title:
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
+      href: "/",
+      stock:1
+    },
   ];
   export const inStock4=[
      {
+      id:26,
       img: "/images/p6.jpg",
       title:
       "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
@@ -341,7 +282,8 @@ export const cates = [
       href: "/",
       stock:1
     },
-        {
+       {
+        id:27,
       img: "/images/p6.jpg",
       title:
       "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
@@ -350,7 +292,9 @@ export const cates = [
       discount:18,
       href: "/",
       stock:1
-    },    {
+    },
+       {
+        id:28,
       img: "/images/p6.jpg",
       title:
       "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
@@ -359,7 +303,9 @@ export const cates = [
       discount:18,
       href: "/",
       stock:1
-    },    {
+    },
+     {
+        id:29,
       img: "/images/p6.jpg",
       title:
       "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
@@ -368,61 +314,9 @@ export const cates = [
       discount:18,
       href: "/",
       stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
-      img: "/images/p6.jpg",
-      title:
-      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
-      price: "6,470",
-      oldPrice:"7,890",
-      discount:18,
-      href: "/",
-      stock:1
-    },    {
+    },
+     {
+        id:30,
       img: "/images/p6.jpg",
       title:
       "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
@@ -435,6 +329,7 @@ export const cates = [
   ]
   export const inStock5=[
     {
+      id:31,
       img: "/images/s4.jpg",
       title:
    "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
@@ -445,6 +340,7 @@ export const cates = [
       stock:1
     },
     {
+      id:32,
       img: "/images/s4.jpg",
       title:
    "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
@@ -453,7 +349,9 @@ export const cates = [
       discount:29,
       href: "/",
       stock:1
-    },{
+    },
+    {
+      id:33,
       img: "/images/s4.jpg",
       title:
    "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
@@ -462,7 +360,9 @@ export const cates = [
       discount:29,
       href: "/",
       stock:1
-    },{
+    },
+{
+      id:34,
       img: "/images/s4.jpg",
       title:
    "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
@@ -471,79 +371,9 @@ export const cates = [
       discount:29,
       href: "/",
       stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
-      img: "/images/s4.jpg",
-      title:
-   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
-      price: "50,810",
-      oldPrice:"71,560",
-      discount:29,
-      href: "/",
-      stock:1
-    },{
+    },
+    {
+      id:35,
       img: "/images/s4.jpg",
       title:
    "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
@@ -630,3 +460,10 @@ export const cates = [
       { img: "/images/p1.jpg", href: "/" },
       { img: "/images/p1.jpg", href: "/" },
     ];
+    export const allProducts = [
+  ...inStock,
+  ...inStock2,
+  ...inStock3,
+  ...inStock4,
+  ...inStock5,
+];

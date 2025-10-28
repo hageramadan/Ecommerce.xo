@@ -6,7 +6,7 @@ interface ImgProp {
 export default function ImageComponent({ image }: ImgProp) {
   return (
     <>
-      <Link href={"/"} aria-label={`اذهب إلى المنتج`}>
+     
         <div className="relative w-full h-full">
           <Image
             src={image}
@@ -19,7 +19,7 @@ export default function ImageComponent({ image }: ImgProp) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
         </div>
-      </Link>
+  
     </>
   );
 }

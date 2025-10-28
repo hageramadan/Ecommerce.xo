@@ -3,11 +3,13 @@ import HearComponent from "./HearComponent";
 import { ProductIn } from "@/Types/ProductIn";
 import PriceComponent from "./PriceComponent";
 import ImageComponent from "./ImageComponent";
+import Link from "next/link";
 interface ProductCardProps extends ProductIn {
   className?: string;
 }
 
 export default function ProductCard({
+  id,
   img,
   title,
   price,
@@ -18,7 +20,11 @@ export default function ProductCard({
 }: ProductCardProps ) {
   return (
     <>
-      <div className="flex flex-col border rounded-xl border-gray-200 pb-1 overflow-hidden gap-3">
+     <Link
+      href={`/product/${id}`}
+      className={`block hover:shadow-md transition-shadow duration-300 `}
+    >
+<div className="flex flex-col border rounded-xl border-gray-200 pb-1 overflow-hidden gap-3">
         <div className="relative w-full h-[220px] md:h-[220px]">
           <ImageComponent image={img} />
           <HearComponent />
@@ -45,6 +51,9 @@ export default function ProductCard({
           </div>
         </div>
       </div>
+
+    </Link>
+      
     </>
   );
 }
