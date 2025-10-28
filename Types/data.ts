@@ -25,7 +25,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },
          {
       id:2,
@@ -34,7 +36,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:3,
       img: "/images/s1.jpg",
@@ -42,7 +46,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:4,
       img: "/images/s1.jpg",
@@ -50,7 +56,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:5,
       img: "/images/s1.jpg",
@@ -58,7 +66,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:6,
       img: "/images/s1.jpg",
@@ -66,7 +76,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:7,
       img: "/images/s1.jpg",
@@ -74,7 +86,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:8,
       img: "/images/s1.jpg",
@@ -82,7 +96,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:9,
       img: "/images/s1.jpg",
@@ -90,7 +106,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },   {
       id:10,
       img: "/images/s1.jpg",
@@ -98,7 +116,9 @@ export const cates = [
         "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
       price: "2,999",
       href: "/",
-      stock:1
+      stock:1,
+       oldPrice:"71,560",
+      discount:29,
     },
   ];
    export const inStock2 = [
@@ -111,7 +131,7 @@ export const cates = [
       oldPrice:"12,630",
       discount:44,
       href: "/",
-      stock:1
+      stock:1,
     },
     {
       id:12,
