@@ -50,6 +50,180 @@ export const cates = [
       href: "/",
       stock:1
     },
+      {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },  {
+      img: "/images/s1.jpg",
+      title:
+        "قلاية بدون زيت أنالوج من فيليبس HD9200-91 - أسود - APL.HD9200-91 (ضمان دولى)",
+      price: "2,999",
+      href: "/",
+      stock:1
+    },
+  ];
+   export const inStock2 = [
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s2.jpg",
+      title:
+      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
+      price: "7,199",
+      oldPrice:"12,630",
+      discount:44,
+      href: "/",
+      stock:1
+    },
+   
   ];
    export const cates2 = [
     { title: "سراير", img: "/images/c1.png", link: "/" },

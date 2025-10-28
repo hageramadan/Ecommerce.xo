@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import InStockCard from "./InstockCard";
+
 
 interface InStockSliderProps {
   inStock: {
@@ -15,9 +15,10 @@ interface InStockSliderProps {
     stock?: number;
     href?: string;
   }[];
+   CardComponent: React.ComponentType<{ image: string; title: string; price:string; stock?: number }>;
 }
 
-export default function InStockSlider({ inStock }: InStockSliderProps) {
+export default function InStockSlider({ inStock , CardComponent }: InStockSliderProps) {
   const prevRef = useRef<HTMLDivElement | null>(null);
   const nextRef = useRef<HTMLDivElement | null>(null);
   const swiperRef = useRef<any>(null);
@@ -89,7 +90,7 @@ export default function InStockSlider({ inStock }: InStockSliderProps) {
       >
         {inStock.map((des, index) => (
           <SwiperSlide key={index}>
-            <InStockCard image={des.img} title={des.title} price={des.price} />
+             <CardComponent image={des.img} title={des.title} price={des.price} stock={des.stock} />
           </SwiperSlide>
         ))}
       </Swiper>

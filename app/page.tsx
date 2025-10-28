@@ -1,9 +1,12 @@
+'use client'
 import CategoriesSlider from "@/components/CategoriesC";
 import Discount from "@/components/Discount";
+import InStockCard from "@/components/InstockCard";
 import InStockSlider from "@/components/InStockSlider";
+import ProductCard from "@/components/ProductCard";
 import ShowAll from "@/components/ShowAll";
 import SliderComponent from "@/components/SliderComponent";
-import { cates2, inStock, pro, sliderImages, sliderLinks , Ess , Desc, sliderImages2} from "@/Types/data";
+import { cates2, inStock, pro, sliderImages, sliderLinks , Ess , Desc, sliderImages2, inStock2} from "@/Types/data";
 
 
 export default function Home() {
@@ -60,10 +63,11 @@ export default function Home() {
 
         {/* products in stock */}
 
-       <InStockSlider inStock={inStock} />
+       <InStockSlider inStock={inStock} CardComponent={InStockCard}/>
        <SliderComponent src={sliderImages2} href={sliderLinks} />
        <Discount src="/images/d4.jpg" href="/" />
         <ShowAll title="اكتشف مجموعتنا من الترابيزات" Anchor="مشاهدة المزيد"link="/"/>
+       <InStockSlider inStock={inStock2} CardComponent={ProductCard}/>
 
       </div>
     </>

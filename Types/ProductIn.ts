@@ -3,5 +3,7 @@ export interface ProductIn{
   title:string,
   description?:string,
   stock?:number,
-  price:string
+  price:string ,
+  oldPrice?:string,
+  discount?:number
 }
