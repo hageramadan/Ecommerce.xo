@@ -21,7 +21,7 @@ export default function HearComponent() {
             <FaHeart
               size={17}
               className={`transition-all duration-300 ${
-                liked ? "text-pro-max block" : "hidden"
+                liked ? "text-pro block" : "hidden"
               }`}
             />
           </div>

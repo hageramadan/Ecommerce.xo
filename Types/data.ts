@@ -230,105 +230,330 @@ export const cates = [
     {
       img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
     },
     {
-      img: "/images/s2.jpg",
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
-    },
-    {
-      img: "/images/s2.jpg",
+    }, {
+      img: "/images/p3.jpg",
       title:
-      "ترابيزة قهوة خشب طبيعي بيج - 45 × 120 × 50 سم" ,
-      price: "7,199",
-      oldPrice:"12,630",
-      discount:44,
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
+      href: "/",
+      stock:1
+    }, {
+      img: "/images/p3.jpg",
+      title:
+      "طقم وحدة تلفزيون وترابيزة قهوة خشب الاتحاد الاوروبي وام دي اف - أبيض وبيج",
+      price: "9,989",
+      oldPrice:"19,215",
+      discount:49,
       href: "/",
       stock:1
     },
    
   ];
+  export const inStock4=[
+     {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },
+        {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },    {
+      img: "/images/p6.jpg",
+      title:
+      "مكتب أطفال و كرسي خشب ام دي اف تايلاندي و اوروبي - بيج و أبيض",
+      price: "6,470",
+      oldPrice:"7,890",
+      discount:18,
+      href: "/",
+      stock:1
+    },
+  ]
+  export const inStock5=[
+    {
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },
+    {
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },{
+      img: "/images/s4.jpg",
+      title:
+   "مشاية براند اسبرينت وزن 220 كيلو أسود - sprint y.g 990",
+      price: "50,810",
+      oldPrice:"71,560",
+      discount:29,
+      href: "/",
+      stock:1
+    },
+  ]
    export const cates2 = [
     { title: "سراير", img: "/images/c1.png", link: "/" },
     { title: "سراير", img: "/images/c1.png", link: "/" },
@@ -352,6 +577,7 @@ export const cates = [
     { title: "سراير", img: "/images/c1.png", link: "/" },
     { title: "سراير", img: "/images/c1.png", link: "/" },
   ];
+  
 
   export const sliderImages = [
       "/images/slider1.jpg",
@@ -378,6 +604,21 @@ export const cates = [
       { img: "/images/p2.jpg", href: "/" },
    
     ];
+     export const Desc3 = [
+      { img: "/images/p4.jpg", href: "/" },
+      { img: "/images/p4.jpg", href: "/" },
+      { img: "/images/p4.jpg", href: "/" },
+      { img: "/images/p4.jpg", href: "/" },
+   
+    ];
+     export const Desc4 = [
+      { img: "/images/p5.jpg", href: "/" },
+      { img: "/images/p5.jpg", href: "/" },
+      { img: "/images/p5.jpg", href: "/" },
+ 
+   
+    ];
+ 
    export const Ess = [
       { img: "/images/e1.jpg", href: "/" },
       { img: "/images/e1.jpg", href: "/" },
