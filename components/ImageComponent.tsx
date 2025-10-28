@@ -11,7 +11,8 @@ export default function ImageComponent({ image }: ImgProp) {
           <Image
             src={image}
             alt="صورة المنتج"
-            fill
+            width={600}
+            height={400}
             className="object-cover"
             loading="lazy"
             decoding="async"
