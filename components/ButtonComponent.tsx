@@ -2,9 +2,10 @@ import { useState, useRef, ReactNode } from "react";
 
 interface TitleProps {
   title: string | ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default function ButtonComponent({ title }: TitleProps) {
+export default function ButtonComponent({ title, onClick }: TitleProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [rippleStyle, setRippleStyle] = useState({});
   const [showRipple, setShowRipple] = useState(false);
@@ -38,7 +39,10 @@ export default function ButtonComponent({ title }: TitleProps) {
   return (
     <button
       ref={buttonRef}
-      onClick={handleAddToCart}
+      onClick={(e) => {
+        handleAddToCart(e); // 🎬 يشغل الموجة
+        if (onClick) onClick(e); // 🚀 يشغل الحدث الخارجي
+      }}
       disabled={isLoading}
       className={`relative overflow-hidden flex items-center justify-center gap-2 h-14 cursor-pointer text-white rounded w-full mt-3 bg-pro hover:bg-pro-max transition-all duration-300`}
     >

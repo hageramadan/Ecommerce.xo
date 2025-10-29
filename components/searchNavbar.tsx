@@ -155,6 +155,7 @@ export default function SearchNavbar() {
           >
             {/* Close Button */}
             <button
+            aria-label="close taps"
               onClick={() => setMenuOpen(false)}
               className="absolute top-5 end-1 text-white hover:text-gray-300 transition"
             >
@@ -170,6 +171,7 @@ export default function SearchNavbar() {
                   key={index}
                   href="#"
                   className="hover:text-pro transition"
+                  aria-label={item.title}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.title}

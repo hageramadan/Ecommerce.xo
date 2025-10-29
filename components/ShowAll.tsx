@@ -14,8 +14,9 @@ export default function ShowAll({title,Anchor,link}:ShowProps) {
                 {title}
               </h2>
               <div className="flex gap-1 items-center text-pro cursor-pointer font-semibold text-[1.1rem]">
-                <Link href={link||"/"}> 
+                <Link href={link||"/"} aria-label="products page"> 
                         {Anchor}
+                        
                 </Link>
                 <RiArrowRightSLine size={28} className=" rotate-180 " />
               </div>

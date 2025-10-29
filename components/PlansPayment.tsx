@@ -12,7 +12,7 @@ export default function PlansPayment() {
         <ImageComponent image="/images/b1.jpg" />
         <ImageComponent image="/images/b2.jpg" />
         <QuantityCounter />
-       <ButtonComponent title="أضف الي العربة"/>
+      
       </div>
     </div>
   );

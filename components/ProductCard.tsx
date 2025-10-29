@@ -21,8 +21,9 @@ export default function ProductCard({
   return (
     <>
      <Link
+     aria-label="product"
       href={`/product/${id}`}
-      className={`block hover:shadow-md transition-shadow duration-300 `}
+      className={`block hover:shadow-md transition-shadow duration-300 ` }
     >
 <div className="flex flex-col border rounded-xl border-gray-200 pb-1 overflow-hidden gap-3">
         <div className="relative w-full h-[220px] md:h-[220px]">
