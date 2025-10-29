@@ -9,7 +9,6 @@ interface HearComponentProps {
 }
 
 export default function HearComponent({ liked: likedProp, onToggleLike }: HearComponentProps) {
-  // لو ماجاش liked من بره، نستخدم state داخلي
   const [internalLiked, setInternalLiked] = useState(false);
   const liked = likedProp ?? internalLiked;
 
@@ -24,7 +23,7 @@ export default function HearComponent({ liked: likedProp, onToggleLike }: HearCo
   return (
     <div
       onClick={(e) => {
-        e.stopPropagation(); // تمنع الذهاب لصفحة التفاصيل
+        e.stopPropagation(); 
         handleClick();
       }}
       className="absolute top-1 end-0 shadow rounded-full bg-white/70 w-fit px-2 py-1.5 cursor-pointer me-1 transition hover:scale-110"
