@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "@/styles/screen.css"
+import "@/styles/screen.css";
 import Navbar from "@/components/Navbar";
-
 
 
 export const metadata: Metadata = {
@@ -17,11 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body
-        
-      >
+      <body className="bg-white text-gray-900">
         <Navbar />
         {children}
+
+      
+  
       </body>
     </html>
   );
