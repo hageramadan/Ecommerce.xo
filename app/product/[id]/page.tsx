@@ -2,7 +2,11 @@ import { inStock, inStock2, inStock3, inStock4, inStock5 } from "@/Types/data";
 import ImageComponent from "@/components/ImageComponent";
 import PriceComponent from "@/components/PriceComponent";
 import Link from "next/link";
-import { GoStarFill } from "react-icons/go";
+import { GoShieldCheck, GoStarFill } from "react-icons/go";
+import { HiOutlineTruck } from "react-icons/hi";
+import { IoIosArrowDown } from "react-icons/io";
+import { PiTruckLight } from "react-icons/pi";
+import { SlArrowDown } from "react-icons/sl";
 
 const allProducts = [
   ...inStock,
@@ -47,7 +51,9 @@ export default async function ProductPage({
         <ImageComponent image={product.img} />
         {/* */}
         <div>
-          <h2 className="text-[#43454c] mb-3 text-xl font-bold">{product.title}</h2>
+          <h2 className="text-[#43454c] mb-3 text-xl font-bold">
+            {product.title}
+          </h2>
           <div className="flex gap-3">
             <div className="flex gap-1 text-pro-max items-center">
               <GoStarFill />
@@ -58,21 +64,52 @@ export default async function ProductPage({
             </div>
             <p className="   text-[#43454c] text-lg ">4.7</p>
             <span className="text-[#646464] text-lg">|</span>
-            <p className=" underline cursor-pointer text-[#43454c] text-lg ">(تقييمات)</p>
+            <p className=" underline cursor-pointer text-[#43454c] text-lg ">
+              (تقييمات)
+            </p>
           </div>
-          {product.discount &&(
-                <div className="flex gap-1 mt-5">
-                        <PriceComponent price={product.price} />
-                        <p className="text-gray-400 line-through text-[1rem] mx-1 ">
-                          {product.oldPrice}
-                        </p>
-                        <div className="font-bold text-[1rem] flex text-[#08b63d] bg-[#d2ecda] rounded py-0.5 px-3">
-                          <span className="me-1">%</span>
-                          <p >{product.discount}</p>
-                          <span>-</span>
-                        </div>
-                      </div>
+          {/* free  */}
+          <div className="flex gap-2 text-pro mt-5">
+            <div className="flex  items-center bg-[#ecf1fe] rounded-md p-1 ps-1">
+              <PiTruckLight className="h-5 w-6 text-gray-700 me-1" />
+
+              <p className="text-[14px] font-bold mb-1">شحن مجاني</p>
+              <IoIosArrowDown className="h-4 w-6 text-gray-500" />
+            </div>
+            <div className="flex gap-1 items-center bg-[#ecf1fe] rounded-md p-1 pe-2">
+              <GoShieldCheck className="h-4 w-6 text-gray-600" />
+              <p className="text-[14px] font-bold mb-1">ضمان سنة</p>
+            </div>
+          </div>
+          {product.discount && (
+            <div className="flex gap-1 mt-5">
+              <PriceComponent price={product.price} />
+              <p className="text-gray-400 line-through text-[1rem] mx-1 ">
+                {product.oldPrice}
+              </p>
+              <div className="font-bold text-[1rem] flex text-[#08b63d] bg-[#d2ecda] rounded py-0.5 px-3">
+                <span className="me-1">%</span>
+                <p>{product.discount}</p>
+                <span>-</span>
+              </div>
+            </div>
           )}
+          <div>
+            <p className="text-[#898989] text-[13px] mt-3">
+              السعر يشمل ضريبة القيمة المضافة
+            </p>
+
+            {product.oldPrice && product.price && (
+              <p className="text-green-600 font-semibold text-[12px]">
+                لقد وفرت {" "}
+                {(
+                  parseFloat(product.oldPrice.replace(/[^\d.]/g, "")) -
+                  parseFloat(product.price.replace(/[^\d.]/g, ""))
+                ).toLocaleString("en-US")}{" "}
+                جنيه
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </>
