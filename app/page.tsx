@@ -1,6 +1,7 @@
 "use client";
 import CategoriesSlider from "@/components/CategoriesC";
 import Discount from "@/components/Discount";
+import Footer from "@/components/Footer";
 import InStockCard from "@/components/InstockCard";
 import InStockSlider from "@/components/InStockSlider";
 import ProductCard from "@/components/ProductCard";
@@ -27,7 +28,7 @@ import {
 export default function Home() {
   return (
     <>
-      <div className="mx-5 lg:mx-[18%] rounded-2xl py-6   flex flex-col gap-5">
+      <div className="px-5 lg:px-[18%] rounded-2xl py-6   flex flex-col gap-5">
         <SliderComponent src={sliderImages} href={sliderLinks} />
         <Discount src="/images/discount.jpg" href="/" />
         <CategoriesSlider categories={cates2} />
@@ -77,8 +78,10 @@ export default function Home() {
           link="/"
         />
 
-
-        <InStockSlider inStock={inStock} CardComponent={(props) => <ProductCard {...props} className="flex" />}/>
+        <InStockSlider
+          inStock={inStock}
+          CardComponent={(props) => <ProductCard {...props} className="flex" />}
+        />
         <SliderComponent src={sliderImages2} href={sliderLinks} />
         <Discount src="/images/d4.jpg" href="/" />
         <ShowAll
@@ -86,7 +89,12 @@ export default function Home() {
           Anchor="مشاهدة المزيد"
           link="/"
         />
-        <InStockSlider inStock={inStock2} CardComponent={(props) => <ProductCard {...props} className="hidden" />} />
+        <InStockSlider
+          inStock={inStock2}
+          CardComponent={(props) => (
+            <ProductCard {...props} className="hidden" />
+          )}
+        />
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7">
           جدّد قعدة بيتك دلوقتي
         </h2>
@@ -102,7 +110,12 @@ export default function Home() {
           Anchor="مشاهدة المزيد"
           link="/"
         />
-        <InStockSlider inStock={inStock3} CardComponent={(props) => <ProductCard {...props} className="hidden" />} />
+        <InStockSlider
+          inStock={inStock3}
+          CardComponent={(props) => (
+            <ProductCard {...props} className="hidden" />
+          )}
+        />
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7">
           كل التفاصيل اللي أوضة نومك محتاجها
         </h2>
@@ -127,19 +140,32 @@ export default function Home() {
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7 mt-2">
           أكتشف أساس المكتب للأطفال
         </h2>
-        <InStockSlider inStock={inStock4} CardComponent={(props) => <ProductCard {...props} className="hidden" />} />
-   
+        <InStockSlider
+          inStock={inStock4}
+          CardComponent={(props) => (
+            <ProductCard {...props} className="hidden" />
+          )}
+        />
+
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7 mt-2">
-           أكتشف معدات الرياضة دلوقتي  
+          أكتشف معدات الرياضة دلوقتي
         </h2>
-             <Discount src="/images/d7.jpg" href="/" />
-              <ShowAll
+        <Discount src="/images/d7.jpg" href="/" />
+        <ShowAll
           title="اكتشف أفضل أجهزة الجري"
           Anchor="مشاهدة المزيد"
           link="/"
         />
-          <InStockSlider inStock={inStock5} CardComponent={(props) => <ProductCard {...props} className="flex" />}  />
+        <InStockSlider
+          inStock={inStock5}
+          CardComponent={(props) => <ProductCard {...props} className="flex" />}
+        />
+       
       </div>
+
+      
+     
+   
     </>
   );
 }
