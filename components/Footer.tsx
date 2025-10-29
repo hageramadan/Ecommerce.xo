@@ -25,11 +25,11 @@ export default function Footer() {
     },
     {
       title: "أنضم كشريك",
-      href: "/",
+      href: "/contactUs",
     },
     {
       title: "كودأكس للشركات",
-      href: "/",
+      href: "/contactUs",
     },
     {
       title: "تواصل معانا",
