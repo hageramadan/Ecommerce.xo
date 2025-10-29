@@ -7,7 +7,7 @@ export default function Page() {
           سياسة الإرجاع والاسترداد
         </h2>
         <p className="text-gray-600 text-[15px] max-w-2xl mx-auto">
-          نلتزم في <span className="font-semibold text-pro">هومزمارت</span> بتوفير تجربة تسوق آمنة وموثوقة، 
+          نلتزم في <span className="font-semibold text-pro">كود أكس</span> بتوفير تجربة تسوق آمنة وموثوقة، 
           مع إتاحة خيارات مرنة للإرجاع والاستبدال بما يضمن رضاك التام عن مشترياتك.
         </p>
       </div>

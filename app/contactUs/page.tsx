@@ -23,7 +23,7 @@ export default function ContactPage() {
         </div>
         <div className="bg-white rounded-2xl shadow p-6 text-center">
           <h3 className="font-semibold text-lg text-pro mb-2">البريد الإلكتروني</h3>
-          <p className="text-gray-700 text-[15px]">hello@homzmart.com</p>
+          <p className="text-gray-700 text-[15px]">hello@codexx.com</p>
         </div>
       </div>
 
