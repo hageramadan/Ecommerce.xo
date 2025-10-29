@@ -12,7 +12,7 @@ export default function QuantityCounter() {
     if (quant < 10) {
       setQuant((prev) => prev + 1);
       if (quant + 1 === 10) {
-        showToast("⚠️ تواصل مع الدعم لطلب الكمية", "warning");
+        showToast("⚠️ لقد وصلت إلى الحد الأقصى للكمية، تواصل مع الدعم للطلبات الكبيرة", "warning");
       }
     }
   };
@@ -20,7 +20,7 @@ export default function QuantityCounter() {
   const decrease = () => {
     if (quant > 1) setQuant((prev) => prev - 1);
     if (quant  === 1) {
-        showToast(" أقل كميه واحد منتج ", "warning");
+        showToast("🔸 أقل كمية يمكن طلبها هي منتج واحد", "warning");
       }
   };
 
@@ -72,7 +72,7 @@ export default function QuantityCounter() {
           aria-label="decrease"
             onClick={increase}
             className={`bg-gray-200 rounded w-8 h-8 flex items-center justify-center transition 
-              ${quant === 10
+              ${quant === 11
                 ? "text-gray-400 cursor-not-allowed"
                 : "text-gray-800 hover:bg-gray-300 cursor-pointer"}`}
           >

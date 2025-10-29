@@ -29,8 +29,13 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    unoptimized: true,
+    unoptimized: false,
     minimumCacheTTL: 86400, 
+    
+  formats: ['image/avif', 'image/webp'], // أحدث تنسيقات ضغط
+
+
+
   },
 
 
