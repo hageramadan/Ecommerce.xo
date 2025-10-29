@@ -1,12 +1,12 @@
 import { inStock, inStock2, inStock3, inStock4, inStock5 } from "@/Types/data";
+import FreeDeliver from "@/components/FreeDeliver";
 import ImageComponent from "@/components/ImageComponent";
 import PriceComponent from "@/components/PriceComponent";
 import Link from "next/link";
-import { GoShieldCheck, GoStarFill } from "react-icons/go";
-import { HiOutlineTruck } from "react-icons/hi";
-import { IoIosArrowDown } from "react-icons/io";
-import { PiTruckLight } from "react-icons/pi";
-import { SlArrowDown } from "react-icons/sl";
+import { FaTruckFast } from "react-icons/fa6";
+import { GoStarFill } from "react-icons/go";
+
+
 
 const allProducts = [
   ...inStock,
@@ -30,7 +30,8 @@ export default async function ProductPage({
   const { id } = await params;
 
   const product = allProducts.find((p) => p.id.toString() === id);
-
+     
+  
   if (!product) {
     return (
       <>
@@ -69,18 +70,7 @@ export default async function ProductPage({
             </p>
           </div>
           {/* free  */}
-          <div className="flex gap-2 text-pro mt-5">
-            <div className="flex  items-center bg-[#ecf1fe] rounded-md p-1 ps-1">
-              <PiTruckLight className="h-5 w-6 text-gray-700 me-1" />
-
-              <p className="text-[14px] font-bold mb-1">شحن مجاني</p>
-              <IoIosArrowDown className="h-4 w-6 text-gray-500" />
-            </div>
-            <div className="flex gap-1 items-center bg-[#ecf1fe] rounded-md p-1 pe-2">
-              <GoShieldCheck className="h-4 w-6 text-gray-600" />
-              <p className="text-[14px] font-bold mb-1">ضمان سنة</p>
-            </div>
-          </div>
+         <FreeDeliver/>
           {product.discount && (
             <div className="flex gap-1 mt-5">
               <PriceComponent price={product.price} />
@@ -94,13 +84,13 @@ export default async function ProductPage({
               </div>
             </div>
           )}
-          <div>
-            <p className="text-[#898989] text-[13px] mt-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 mt-3">
+            <p className="text-[#898989] text-[13px] ">
               السعر يشمل ضريبة القيمة المضافة
             </p>
 
             {product.oldPrice && product.price && (
-              <p className="text-green-600 font-semibold text-[12px]">
+              <p className="text-green-600 font-semibold text-[12px] ">
                 لقد وفرت {" "}
                 {(
                   parseFloat(product.oldPrice.replace(/[^\d.]/g, "")) -
@@ -109,6 +99,13 @@ export default async function ProductPage({
                 جنيه
               </p>
             )}
+          </div>
+          <div className="mt-3 flex gap-1 ">
+            <FaTruckFast className=" h-5 w-8  text-pro mt-1 scale-x-[-1] "/>
+            <p className="text-gray-600 text-[0.95rem]">التوصيل خلال الفترة من <span className=" font-bold text-gray-700 ">06 نوفمبر - 16 نوفمبر </span>باستثناء الإجازات</p>
+          </div>
+          <div>
+
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@ export default function SearchNavbar() {
           </div>
 
           {/* Logo */}
-          <div className="relative w-[110px] h-11 me-2 lg:me-0">
+          <div className="relative w-20 lg:w-[110px] h-11 me-2 lg:me-0">
             <Image
               src="/images/zeejlogo.png"
               alt="logo"
