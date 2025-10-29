@@ -1,8 +1,11 @@
 import { inStock, inStock2, inStock3, inStock4, inStock5 } from "@/Types/data";
 import FreeDeliver from "@/components/FreeDeliver";
 import ImageComponent from "@/components/ImageComponent";
+import PlansPayment from "@/components/PlansPayment";
 import PriceComponent from "@/components/PriceComponent";
-import Link from "next/link";
+import ProductNotFound from "@/components/ProductNotFound";
+
+
 import { FaTruckFast } from "react-icons/fa6";
 import { GoStarFill } from "react-icons/go";
 
@@ -35,13 +38,7 @@ export default async function ProductPage({
   if (!product) {
     return (
       <>
-        <div className="p-10 text-center text-2xl">
-          <p>هذا المنتج غير متوفر! </p>
-          <button className="text-white bg-pro px-7 py-2 rounded-4xl mt-5 text-xl pb-3">
-            <Link href="/">متابعة التسوق</Link>
-          </button>
-        </div>
-        ;
+        <ProductNotFound/>
       </>
     );
   }
@@ -104,10 +101,9 @@ export default async function ProductPage({
             <FaTruckFast className=" h-5 w-8  text-pro mt-1 scale-x-[-1] "/>
             <p className="text-gray-600 text-[0.95rem]">التوصيل خلال الفترة من <span className=" font-bold text-gray-700 ">06 نوفمبر - 16 نوفمبر </span>باستثناء الإجازات</p>
           </div>
-          <div>
-
-          </div>
+        
         </div>
+       <PlansPayment />
       </div>
     </>
   );

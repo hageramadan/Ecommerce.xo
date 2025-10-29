@@ -124,7 +124,7 @@ export default function SearchNavbar() {
           {/* Login */}
           <div className="hidden1 gap-1 items-center rounded-4xl bg-pro text-white py-3 text-[0.9rem] px-4 cursor-pointer">
             <FaRegUser size={15} />
-            <Link href="login">تسجيل دخول</Link>
+            <Link href="/login">تسجيل دخول</Link>
           </div>
         </div>
       </div>

@@ -84,3 +84,18 @@ hsl(217.33deg 51.72% 17.06%)
 .animate-slideDown {
   animation: slideDown 0.3s ease forwards;
 }
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 1.5s ease-out forwards;
+}
