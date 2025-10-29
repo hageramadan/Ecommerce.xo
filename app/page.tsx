@@ -77,9 +77,8 @@ export default function Home() {
           link="/"
         />
 
-        {/* products in stock */}
 
-        <InStockSlider inStock={inStock} CardComponent={InStockCard} />
+        <InStockSlider inStock={inStock} CardComponent={(props) => <ProductCard {...props} className="flex" />}/>
         <SliderComponent src={sliderImages2} href={sliderLinks} />
         <Discount src="/images/d4.jpg" href="/" />
         <ShowAll
