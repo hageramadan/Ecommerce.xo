@@ -1,13 +1,8 @@
 @import "tailwindcss";
-/* 
-hsl(28.97deg 81.31% 58.04%)
-hsl(217.33deg 51.72% 17.06%)
-#14213d
-*/
 :root {
   --pro: #14213d;
-  --pro-max: #eb993d;
-}
+  --pro-max: #eb993d;}
+
 .text-pro {
   color: var(--pro);
 }
@@ -104,7 +99,6 @@ hsl(217.33deg 51.72% 17.06%)
   animation: ripple 1.5s ease-out forwards;
 }
 
-
 /* loader */
 .loader {
   width: 48px;
@@ -136,4 +130,4 @@ hsl(217.33deg 51.72% 17.06%)
   100% {
     transform: rotate(360deg);
   }
-} 
+}

@@ -1,8 +1,6 @@
 "use client";
 import CategoriesSlider from "@/components/CategoriesC";
 import Discount from "@/components/Discount";
-import Footer from "@/components/Footer";
-import InStockCard from "@/components/InstockCard";
 import InStockSlider from "@/components/InStockSlider";
 import ProductCard from "@/components/ProductCard";
 import ShowAll from "@/components/ShowAll";
@@ -160,7 +158,7 @@ export default function Home() {
           inStock={inStock5}
           CardComponent={(props) => <ProductCard {...props} className="flex" />}
         />
-       
+      
       </div>
 
       
