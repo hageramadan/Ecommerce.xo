@@ -7,14 +7,18 @@ export const link = [
 ];
 
 export const cates = [
-  { title: "القرطاسية التجارية" },
-  { title: "مواد التسويق" },
-  { title: "الطباعة بمقاسات كبيرة" },
-  { title: "التغليف والصناديق" },
-  { title: "المنتجات الترويجية" },
-  { title: "الملابس والإكسسوارات" },
-  { title: "العلامة التجارية للشركات والفعاليات" },
-  { title: "عرض جميع المنتجات" },
+  { title: "الأثاث" , src:'/images/cat1.png'},
+  { title: "وحدات تخزين"  , src:'/images/cat1.png'},
+  { title: "ديكورات منزلية"  , src:'/images/cat2.png' },
+  { title: "أثاث مكتبي"  , src:'/images/cat1.png' },
+  { title: "الاضاءة"  , src:'/images/cat1.png'},
+  { title: "أقمشة و مفروشات"  , src:'/images/cat2.png'},
+  { title: "المطبخ والحمام"  , src:'/images/cat1.png' },
+  { title: "الأجهزة المنزلية"  , src:'/images/cat1.png' },
+  { title: "أدوات منزلية"  , src:'/images/cat2.png' },
+  { title: "الكترونيات"  , src:'/images/cat1.png'},
+  { title: "أثاث خارجي"  , src:'/images/cat2.png'},
+  
 ];
 
  export const inStock = [
@@ -486,4 +490,25 @@ export const cates = [
   ...inStock3,
   ...inStock4,
   ...inStock5,
+];
+
+
+
+
+export interface Order {
+  id: string;
+  product: string;
+  year: number;
+}
+
+
+// orders
+export const ordersData:Order[] = [
+  { id: "1", product: "منتج A", year: 2023 },
+  { id: "2", product: "منتج B", year: 2024 },
+  { id: "4", product: "منتج C", year: 2025 },
+  { id: "5", product: "منتج L", year: 2025 },
+  { id: "6", product: "منتج C", year: 2025 },
+  { id: "7", product: "منتج H", year: 2025 },
+
 ];

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { TfiHeart } from "react-icons/tfi";
 
@@ -8,38 +7,20 @@ interface HearComponentProps {
   onToggleLike?: () => void;
 }
 
-export default function HearComponent({ liked: likedProp, onToggleLike }: HearComponentProps) {
-  const [internalLiked, setInternalLiked] = useState(false);
-  const liked = likedProp ?? internalLiked;
-
-  const handleClick = () => {
-    if (onToggleLike) {
-      onToggleLike();
-    } else {
-      setInternalLiked(!internalLiked);
-    }
-  };
-
+export default function HearComponent({ liked = false, onToggleLike }: HearComponentProps) {
   return (
     <div
       onClick={(e) => {
-        e.stopPropagation(); 
-        handleClick();
+        e.stopPropagation();
+        onToggleLike?.();
       }}
-      className="absolute top-1 end-0 shadow rounded-full bg-white/70 w-fit px-2 py-1.5 cursor-pointer me-1 transition hover:scale-110"
+      className="absolute top-1 end-1 shadow rounded-full bg-white/70 w-fit px-2 py-1.5 cursor-pointer transition-transform hover:scale-110"
     >
-      <TfiHeart
-        size={17}
-        className={`transition-all duration-300 ${
-          liked ? "hidden" : "text-pro"
-        }`}
-      />
-      <FaHeart
-        size={17}
-        className={`transition-all duration-300 ${
-          liked ? "text-pro block" : "hidden"
-        }`}
-      />
+      {liked ? (
+        <FaHeart size={17} className="text-pro transition-all duration-300" />
+      ) : (
+        <TfiHeart size={17} className="text-pro transition-all duration-300" />
+      )}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "./globals.css";
 import "@/styles/screen.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/src/context/CartContext";
 
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
+       <CartProvider>
       <body className="bg-white text-gray-900">
         <Navbar />
         {children}
@@ -24,6 +26,8 @@ export default function RootLayout({
        <Footer/>
   
       </body>
+       </CartProvider>
+
     </html>
   );
 }

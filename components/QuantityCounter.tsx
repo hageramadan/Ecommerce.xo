@@ -3,10 +3,19 @@ import { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import ButtonComponent from "@/components/ButtonComponent";
 import Toast from "@/components/Toaster";
+import { useCart } from "@/src/context/CartContext";
+import { ProductIn } from "@/Types/ProductIn";
 
-export default function QuantityCounter() {
+
+interface QuantityCounterProps {
+  product: ProductIn
+}
+
+export default function QuantityCounter({ product }: QuantityCounterProps) {
   const [quant, setQuant] = useState(1);
   const [toast, setToast] = useState<{ msg: string; img?: string; type: "success" | "warning" | "error" } | null>(null);
+
+  const { cart, addToCart } = useCart(); 
 
   const showToast = (msg: string, type: "success" | "warning" | "error" = "success", img?: string) => {
     setToast({ msg, type, img });
@@ -18,17 +27,28 @@ export default function QuantityCounter() {
       const newQuant = quant + 1;
       setQuant(newQuant);
       if (newQuant === 10)
-        showToast("لقد وصلت إلى الحد الأقصى للكمية، تواصل مع الدعم ", "warning");
+        showToast("لقد وصلت إلى الحد الأقصى للكمية، تواصل مع الدعم", "warning");
     }
   };
 
   const decrease = () => {
-    if (quant > 1) setQuant((prev) => prev - 1);
-    else showToast("أقل كمية يمكن طلبها هي منتج واحد ", "warning");
+    if (quant > 1) setQuant(prev => prev - 1);
+    else showToast("أقل كمية يمكن طلبها هي منتج واحد", "warning");
   };
 
   const handleAddToCart = () => {
-    showToast(" هذا المنتج قد تمت إضافته إلى العربة بنجاح!", "success");
+   
+    const exists = cart.find(item => item.id === product.id);
+
+    if (exists) {
+   
+      addToCart({ ...product, quantity: quant });
+    } else {
+  
+      addToCart({ ...product, quantity: quant });
+    }
+
+    showToast("تمت إضافة المنتج إلى العربة بنجاح!", "success", product.img);
   };
 
   return (

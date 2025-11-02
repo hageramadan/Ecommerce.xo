@@ -12,6 +12,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import SearchComponent from "./SearchComponent";
+import CartSidebar from "./CartSideBar";
 
 export default function SearchNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,9 +77,8 @@ export default function SearchNavbar() {
             onClick={() => setSearchOpen((prev) => !prev)}
           />
 
-          <div className="flex gap-1 cursor-pointer text-pro-hover">
-            <HiOutlineShoppingBag size={25} strokeWidth={1.3} />
-            <p className="hidden2">العربة</p>
+          <div className="flex gap-1 cursor-pointer ">
+            <CartSidebar />
           </div>
 
           <div className="flex1 gap-4 items-center">
@@ -146,39 +146,59 @@ export default function SearchNavbar() {
       {/* Fullscreen Overlay with Animation */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ clipPath: "inset(0% 0% 100% 0%)", opacity: 0 }}
-            animate={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }}
-            exit={{ clipPath: "inset(0% 0% 100% 0%)", opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 bg-black/70 z-50 flex flex-col items-center pt-4 text-white overflow-hidden"
-          >
-            {/* Close Button */}
-            <button
-            aria-label="close taps"
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black z-40"
               onClick={() => setMenuOpen(false)}
-              className="absolute top-5 end-1 text-white hover:text-gray-300 transition"
-            >
-              <div className="cursor-pointer ">
-                <AiOutlineCloseCircle size={30} />
-              </div>
-            </button>
+            />
 
-            {/* Links */}
-            <nav className="flex flex-col items-center gap-8 text-[16px] font-medium mt-10">
-              {links2.map((item, index) => (
-                <Link
-                  key={index}
-                  href="#"
-                  className="hover:text-pro transition"
-                  aria-label={item.title}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed top-0 right-0 w-full md:w-96 h-full bg-white z-50 shadow-lg flex flex-col py-2"
+            >
+              {/* Close Button */}
+              <div className="flex justify-between shadow-2xl px-4 pb-3 mb-3">
+                <h1 className="text-2xl font-semibold ">سوق</h1>
+                <button
+                  aria-label="close taps"
                   onClick={() => setMenuOpen(false)}
+                  className="self-end text-gray-600 hover:text-gray-800"
                 >
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
+                  <AiOutlineCloseCircle size={30} />
+                </button>
+              </div>
+
+              <p className="text-[1.4rem] font-semibold  px-4 py-4">تسوق حسب الاقسام</p>
+
+              {/* Links */}
+              <nav className="grid grid-cols-2 gap-2 overflow-y-auto flex-1 px-4">
+                {links2.map((item, index) => (
+                  <Link
+                    key={index}
+                    href="#"
+                    className="hover:text-pro transition flex items-center gap-2 mb-2"
+                    aria-label={item.title}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <Image
+                      src={item.src}
+                      width={168}
+                      height={80}
+                      alt={item.title}
+                    />
+                  </Link>
+                ))}
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

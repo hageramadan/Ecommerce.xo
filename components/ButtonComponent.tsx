@@ -40,13 +40,13 @@ export default function ButtonComponent({ title, onClick }: TitleProps) {
     <button
       ref={buttonRef}
       onClick={(e) => {
-        handleAddToCart(e); // 🎬 يشغل الموجة
-        if (onClick) onClick(e); // 🚀 يشغل الحدث الخارجي
+        handleAddToCart(e); 
+        if (onClick) onClick(e);
       }}
       disabled={isLoading}
       className={`relative overflow-hidden flex items-center justify-center gap-2 h-14 cursor-pointer text-white rounded w-full mt-3 bg-pro hover:bg-pro-max transition-all duration-300`}
     >
-      {/* الموجة */}
+   
       {showRipple && (
         <span
           style={rippleStyle}

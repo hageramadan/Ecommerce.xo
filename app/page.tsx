@@ -78,7 +78,7 @@ export default function Home() {
 
         <InStockSlider
           inStock={inStock}
-          CardComponent={(props) => <ProductCard {...props} className="flex" />}
+          CardComponent={(props) => <ProductCard {...props} className="flex" className2="hidden" />}
         />
         <SliderComponent src={sliderImages2} href={sliderLinks} />
         <Discount src="/images/d4.jpg" href="/" />
@@ -90,7 +90,7 @@ export default function Home() {
         <InStockSlider
           inStock={inStock2}
           CardComponent={(props) => (
-            <ProductCard {...props} className="hidden" />
+            <ProductCard {...props} className="hidden" className2="hidden"  />
           )}
         />
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7">
@@ -111,7 +111,7 @@ export default function Home() {
         <InStockSlider
           inStock={inStock3}
           CardComponent={(props) => (
-            <ProductCard {...props} className="hidden" />
+            <ProductCard {...props} className="hidden" className2="hidden"  />
           )}
         />
         <h2 className="text-xl md:text-4xl font-bold text-pro text-center py-7">
@@ -141,7 +141,7 @@ export default function Home() {
         <InStockSlider
           inStock={inStock4}
           CardComponent={(props) => (
-            <ProductCard {...props} className="hidden" />
+            <ProductCard {...props} className="hidden" className2="hidden"  />
           )}
         />
 
@@ -156,7 +156,7 @@ export default function Home() {
         />
         <InStockSlider
           inStock={inStock5}
-          CardComponent={(props) => <ProductCard {...props} className="flex" />}
+          CardComponent={(props) => <ProductCard {...props} className="flex" className2="hidden" />}
         />
       
       </div>

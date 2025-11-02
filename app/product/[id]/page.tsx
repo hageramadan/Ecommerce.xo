@@ -103,7 +103,7 @@ export default async function ProductPage({
           </div>
         
         </div>
-       <PlansPayment />
+       <PlansPayment product={product} />
       </div>
     </>
   );

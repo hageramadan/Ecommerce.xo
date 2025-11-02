@@ -22,10 +22,10 @@
   color: var(--pro-max);
 }
 .border-pro {
-  border: 3px solid var(--pro);
+  border: 1px solid var(--pro);
 }
 .border-pro-max {
-  border: 3px solid var(--pro-max);
+  border: 1px solid var(--pro-max);
 }
 @keyframes slideDown {
   0% {

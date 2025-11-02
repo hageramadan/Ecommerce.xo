@@ -6,5 +6,6 @@ export interface ProductIn{
   stock?:number,
   price:string ,
   oldPrice?:string,
-  discount?:number
+  discount?:number,
+  quantity?:number
 }
