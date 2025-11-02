@@ -63,13 +63,7 @@ export default function ProductCard({
     } else {
       addToCart({ id, title, price, img, quantity: 1 });
     }
-  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]") as string[];
-  if (favorites.includes(id.toString())) {
-    const updatedFavorites = favorites.filter(favId => favId !== id.toString());
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    setIsFavorite(false);
-    onFavoriteChange?.(); // لتحديث أي state خارجي لو موجود
-  }
+ 
     setToast({ msg: "تمت إضافة المنتج إلى العربة بنجاح!", type: "success", img });
     setTimeout(() => setToast(null), 3000);
   };
