@@ -1,3 +1,4 @@
+'use client'
 import { useState, ChangeEvent } from "react";
 import { FiSearch } from "react-icons/fi";
 import { ordersData } from "@/Types/data";
@@ -25,7 +26,7 @@ export default function Orders() {
   return (
     <div>
       {ordersData.length > 0 ? (
-        <div className="p-5">
+        <div>
           <div className="border border-gray-200 rounded-xl p-4 mb-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <h2 className="text-lg font-semibold">طلباتي</h2>
 

@@ -18,11 +18,8 @@ export default function OrderDetailsPage({ orderId }: Props) {
   const steps = ["تم الطلب", "جاري التنفيذ", "جاري التوصيل", "تم التوصيل"];
   const [currentStep, setCurrentStep] = useState(1);
   return (
-    <div className="px-5 xl:px-[14%] lg:px-[5%] py-6 grid grid-cols-12 gap-1 lg:gap-5">
-      <div className=" col-span-12 lg:col-span-4 xl:col-span-2 ">
-        <SideBar onSelect={setSection} active={section} />
-      </div>
-      <div className="col-span-12 lg:col-span-8 xl:col-span-10  rounded-2xl  lg:px-2 mb-16 w-full">
+   
+      <div className=" rounded-2xl  lg:px-2 mb-16 w-full">
         <div className="shadow rounded-xl p-3 bg-white text-[#475569] font-semibold pb-4 mb-3">
           <h3 className="text-pro text-[1.6rem] font-bold mb-1">
             تفاصيل الطلب
@@ -157,6 +154,6 @@ export default function OrderDetailsPage({ orderId }: Props) {
           </div>
         </div>
       </div>
-    </div>
+   
   );
 }

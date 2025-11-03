@@ -3,9 +3,7 @@
 :root {
   --pro: #14213d;
   --pro-max: #eb993d;}
-body{
-  background-color: rgb(253, 253, 253) !important;
-}
+
 .text-pro {
   color: var(--pro);
 }
