@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
-  output: "export",
+  output: "standalone",
   compress: true,
 
   compiler: {

@@ -7,5 +7,7 @@ export interface ProductIn{
   price:string ,
   oldPrice?:string,
   discount?:number,
-  quantity?:number
+  quantity?:number,
+  categorySlug?: string,
+   categoryName?: string
 }

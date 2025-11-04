@@ -5,7 +5,7 @@ import { FaBars, FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { LuPhone } from "react-icons/lu";
 import Link from "next/link";
-import { cates, link } from "@/Types/data";
+import { categories, link } from "@/Types/data";
 import SubIcon from "./subIcon";
 import CategoriesDropdown from "./DropdownComponent";
 import { useState } from "react";
@@ -17,8 +17,8 @@ import CartSidebar from "./CartSideBar";
 export default function SearchNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const categories = link;
-  const links2 = cates;
+  const categories2 = link;
+  const links2 = categories;
 
   return (
     <>
@@ -87,7 +87,7 @@ export default function SearchNavbar() {
             </div>
 
             <CategoriesDropdown
-              categories={categories}
+              categories={categories2}
               trigger={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +183,7 @@ export default function SearchNavbar() {
                 {links2.map((item, index) => (
                   <Link
                     key={index}
-                    href="#"
+                    href={`/category/${item.slug}`}
                     className="hover:text-pro transition flex items-center gap-2 mb-2"
                     aria-label={item.title}
                     onClick={() => setMenuOpen(false)}
