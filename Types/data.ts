@@ -618,3 +618,17 @@ export const products:ProductIn [] = [
     categoryName: "أثاث خارجي",
   },
 ];
+
+export const categoryNames: Record<string, string> = {
+  "furniture": "الأثاث",
+  "storage-units": "وحدات تخزين",
+  "home-decor": "ديكورات منزلية",
+  "office-furniture": "أثاث مكتبي",
+  "lighting": "الإضاءة",
+  "fabrics": "أقمشة ومفروشات",
+  "kitchen-bath": "المطبخ والحمام",
+  "appliances": "الأجهزة المنزلية",
+  "houseware": "أدوات منزلية",
+  "electronics": "إلكترونيات",
+  "outdoor-furniture": "أثاث خارجي",
+};

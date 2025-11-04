@@ -54,7 +54,7 @@ export default function PriceSlider() {
             valueLabelDisplay="auto"
             getAriaLabel={() => "Price range"}
             getAriaValueText={(val) => `${val} `}
-            // sx={{ height: "4rem" }}
+        
           />
           <div className="flex justify-between text-sm font-medium text-gray-600 mb-2">
             <p>من</p>

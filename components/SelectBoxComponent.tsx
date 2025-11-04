@@ -11,12 +11,12 @@ export default function SelectBoxComponent({ title, children }: SelectBoxProps) 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full max-w-md mx-auto mt-6 cursor-pointer">
+    <div className="w-full max-w-md mx-auto mt-3 ">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between transition"
+        className="w-full flex items-center justify-between transition cursor-pointer"
       >
-        <span className="font-semibold text-gray-700">{title}</span>
+        <span className="font-semibold text-gray-900 text-[1rem]">{title}</span>
         {isOpen ? <ChevronUp /> : <ChevronDown />}
       </button>
 
