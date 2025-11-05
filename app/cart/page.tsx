@@ -209,7 +209,7 @@ export default function CartPage() {
                   <span className="text-sm ms-1">جنيه</span>
                 </p>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between pb-3 pt-2">
                 <div className="flex gap-1 items-center">
                   <p className="text-lg text-pro font-bold">الإجمالي :</p>
                   <p className="text-[12px] font-semibold">
