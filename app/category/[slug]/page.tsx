@@ -51,7 +51,7 @@ export default function CategoryPage({ params }: Props) {
 
   return (
     <section className="px-6 lg:px-[18%] py-5 grid grid-col-1 md:grid-cols-4 gap-5">
-      <div className="hidden lg:flex lg:col-span-1 shadow-xl ">
+      <div className="hidden lg:block lg:col-span-1 shadow-xl ">
         <ProductFilter />
       </div>
 

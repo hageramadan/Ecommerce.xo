@@ -1,50 +1,41 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ProductIn } from "@/Types/ProductIn";
-
+import { FaPlus, FaMinus, FaTruckFast } from "react-icons/fa6";
+import { PiLineVerticalThin } from "react-icons/pi";
+import { BsTrash3 } from "react-icons/bs";
+import { useCart } from "@/src/context/CartContext";
+import toast from "react-hot-toast";
+import { MdAddLocationAlt, MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { useState } from "react";
+import AddressForm from "@/components/AddressForm";
+import Button from "@mui/material/Button";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { useRouter } from "next/navigation";
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState<ProductIn[]>([]);
+  const router = useRouter();
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCartItems(storedCart);
-  }, []);
-
-  const updateCart = (items: ProductIn[]) => {
-    setCartItems(items);
-    localStorage.setItem("cart", JSON.stringify(items));
+  const handleClick = () => {
+    router.push("/payment");
   };
+  const [code, setCode] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+  const { cart, removeFromCart, changeQuantity, total } = useCart();
+  const handleApply = () => {
+    if (!code.trim()) {
+      toast.error("هناك خطأ ما، من فضلك أدخل الكود", { position: "top-left" });
+      return;
+    }
 
-  const removeItem = (id: number) => {
-    const updated = cartItems.filter((item) => item.id !== id);
-    updateCart(updated);
+    toast.success("تم تطبيق الكود بنجاح ", { position: "top-left" });
   };
-
-  const changeQuantity = (id: number, quantity: number) => {
-    if (quantity < 1) return;
-    const updated = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity } : item
-    );
-    updateCart(updated);
-  };
-
-  const total = cartItems.reduce((acc, item) => {
-    const price =
-      typeof item.price === "string"
-        ? parseFloat(item.price.replace(/[^0-9.]/g, "")) || 0
-        : item.price || 0;
-    const quantity = item.quantity || 1;
-    return acc + price * quantity;
-  }, 0);
-
   const formattedTotal = total.toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
 
-  if (cartItems.length === 0) {
+  if (cart.length === 0) {
     return (
       <div className="p-10 text-center">
         <h2 className="text-2xl font-bold mb-4">العربة فارغة</h2>
@@ -59,70 +50,199 @@ export default function CartPage() {
   }
 
   return (
-    <div className="p-5 md:p-10 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6">عربة التسوق</h2>
-
-      <div className="flex flex-col gap-6">
-        {cartItems.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col md:flex-row justify-between items-center border-b pb-4 gap-4"
-          >
-            <div className="flex gap-4 items-center flex-1">
-              <div className="w-24 h-24 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
-                {item.img && (
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={96}
-                    height={96}
-                    className="object-contain w-full h-full"
-                  />
-                )}
-              </div>
-              <div>
-                <p className="text-lg font-semibold">{item.title}</p>
-                <p className="text-gray-500">{item.price} جنيه</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button
-                className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
-                onClick={() =>
-                  changeQuantity(item.id, (item.quantity || 1) - 1)
-                }
-              >
-                -
-              </button>
-              <span className="px-4 py-1 border rounded text-center w-12">
-                {item.quantity || 1}
-              </span>
-              <button
-                className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
-                onClick={() =>
-                  changeQuantity(item.id, (item.quantity || 1) + 1)
-                }
-              >
-                +
-              </button>
-            </div>
-
-            <button
-              className="px-3 py-1 text-red-500 hover:text-red-700 transition"
-              onClick={() => removeItem(item.id)}
-            >
-              حذف
-            </button>
+    <div className="px-5 lg:px-[7%] xl:px-[18%]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        <div className="col-span-1 lg:col-span-2 h-fit">
+          <div className="p-2 ps-6 shadow rounded-xl my-4">
+            <h2 className="text-2xl font-semibold py-3">عربة التسوق</h2>
           </div>
-        ))}
-      </div>
 
-      <div className="mt-8 flex flex-col md:flex-row justify-between items-center border-t pt-6 gap-4">
-        <p className="text-xl font-bold">الإجمالي: {formattedTotal} جنيه</p>
-        <button className="bg-pro text-white px-6 py-2 rounded hover:bg-pro-max transition">
-          متابعة الدفع
-        </button>
+          <div className="flex flex-col shadow rounded-xl my-4 p-6 gap-3">
+            {cart.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-xl border border-gray-100 overflow-hidden pt-5 gap-4 relative"
+              >
+                <div className="flex flex-col lg:flex-row w-full">
+                  <div className="flex gap-4">
+                    {/* product-image */}
+                    <div className="w-32 h-32 bg-gray-100 ms-4 rounded-md flex items-center justify-center overflow-hidden">
+                      {item.img && (
+                        <Image
+                          src={item.img}
+                          alt={item.title}
+                          width={125}
+                          height={125}
+                          className="object-contain w-full h-full"
+                        />
+                      )}
+                    </div>
+                    {/* product info */}
+                    <div className="flex flex-col gap-1.5">
+                      <p className="text-black/75">{item.title}</p>
+                      <p className="font-bold">{item.price} جنيه</p>
+                      <div className="text-[#20a144] bg-[#f0fbf3] px-2 py-1 text-[0.9rem] rounded w-fit">
+                        <p>ينتج عند الطلب</p>
+                      </div>
+                      <div className="flex gap-1">
+                        <FaTruckFast className="h-4.5 w-4.5 text-pro mt-1 scale-x-[-1]" />
+                        <p className="text-gray-700 text-[0.95rem]">
+                          توصيل{" "}
+                          <span className="text-gray-800">
+                            06 نوفمبر - 16 نوفمبر{" "}
+                          </span>
+                          باستثناء الإجازات
+                        </p>
+                      </div>
+                      <div className="flex items-center text-[#177998] font-bold">
+                        <button onClick={() => removeFromCart(item.id)}>
+                          الحذف
+                        </button>
+                        <PiLineVerticalThin className="opacity-50" />
+                        <button>حفظ لوقت لاحق</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* counter */}
+                <div className="flex items-center gap-3 absolute bottom-15 end-3">
+                  <button
+                    className="px-1 py-1 bg-gray-50 rounded hover:bg-gray-100 transition cursor-pointer"
+                    onClick={() =>
+                      item.quantity === 1
+                        ? removeFromCart(item.id)
+                        : changeQuantity(item.id, (item.quantity || 1) - 1)
+                    }
+                  >
+                    {item.quantity > 1 ? (
+                      <FaMinus className="text-gray-400" />
+                    ) : (
+                      <BsTrash3 className="text-gray-400" />
+                    )}
+                  </button>
+
+                  <span className="font-bold py-1 rounded text-center text-[1.1rem]">
+                    {item.quantity || 1}
+                  </span>
+
+                  <button
+                    className="px-1 py-1 text-gray-400 bg-gray-50 rounded hover:bg-gray-100 transition cursor-pointer"
+                    onClick={() => {
+                      if ((item.quantity || 1) >= 10) {
+                        toast.error(
+                          "لقد وصلت للحد الأقصى (10 منتجات). تواصل مع الدعم لمزيد من الكمية."
+                        );
+                      } else {
+                        changeQuantity(item.id, (item.quantity || 1) + 1);
+                      }
+                    }}
+                  >
+                    <FaPlus />
+                  </button>
+                </div>
+                {/* free deliver */}
+                <div className="bg-[#fafafa] text-[#20a144] w-full py-3 text-center font-semibold mt-4">
+                  <p>شحن مجاني</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="col-span-1 lg:col-span-1 h-fit">
+          {/* deliver to */}
+          <div
+            className="flex items-center justify-between rounded shadow p-4 mt-4 text-[#605f5f] cursor-pointer hover:bg-gray-50"
+            onClick={() => setOpenModal(true)}
+          >
+            <div className="flex items-center gap-1">
+              <MdAddLocationAlt size={22} />
+              <p>
+                التوصيل إلى<span className="font-bold"> حي الجيزة الجيزة</span>
+              </p>
+            </div>
+            <MdOutlineKeyboardArrowLeft size={22} />
+          </div>
+
+          <AddressForm open={openModal} onClose={() => setOpenModal(false)} />
+          <div className="shadow p-4 pb-0 mt-4 text-[#605f5f] ">
+            <p className="text-xl font-bold p-2 text-pro">كوبون كود</p>
+            <div className="flex items-center border border-gray-300 rounded overflow-hidden w-full max-w-sm">
+              <input
+                type="text"
+                value={code}
+                placeholder="ادخل الكود"
+                onChange={(e) => setCode(e.target.value)}
+                className="flex-1 px-4 py-2 text-gray-800 focus:outline-none"
+              />
+              <button
+                onClick={handleApply}
+                className="bg-gray-200 cursor-pointer text-gray-800 px-5 py-2 hover:bg-gray-300 transition-colors duration-200"
+              >
+                تطبيق
+              </button>
+            </div>
+
+            {/* order */}
+            <div className="my-4 gap-2 flex flex-col">
+              <h4 className="text-pro font-semibold my-2 text-xl">
+                ملخص الطلب
+              </h4>
+              <div className="flex items-center justify-between text-black ">
+                <p className="font-semibold">المجموع</p>
+                <p>
+                  2,435
+                  <span className="text-sm ms-1">جنيه</span>
+                </p>
+              </div>
+              <div className="flex items-center justify-between ">
+                <p className="font-semibold">إجمالي رسوم الشحن</p>
+                <p className="text-md">
+                  48
+                  <span className="text-sm ms-1">جنيه</span>
+                </p>
+              </div>
+              <div className="flex text-pro items-center justify-between border-b-2 border-gray-200  pb-3">
+                <p className="font-semibold">رسوم الدفع عند الإستلام</p>
+                <p className="text-md">
+                  50
+                  <span className="text-sm ms-1">جنيه</span>
+                </p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 items-center">
+                  <p className="text-lg text-pro font-bold">الإجمالي :</p>
+                  <p className="text-[12px] font-semibold">
+                    (يشمل ضريبة القيمة المضافة)
+                  </p>
+                </div>
+
+                <p className="text-[15px] text-pro font-bold">
+                  {formattedTotal}
+                  <span>جنيه</span>
+                </p>
+              </div>
+              <Button
+                variant="contained"
+                sx={{
+                  fontSize: "1.1rem",
+                  backgroundColor: "#14213d",
+                  "&:hover": { backgroundColor: "#0f1a31" },
+                  color: "#fff",
+                  gap: "10px",
+                  paddingX: "20px",
+                  paddingY: "10px",
+                  borderRadius: "10px",
+                  textTransform: "none",
+                }}
+                endIcon={<KeyboardBackspaceIcon />}
+                onClick={handleClick}
+              >
+                تابع عملية الشراء
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
