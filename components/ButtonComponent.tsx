@@ -3,6 +3,7 @@ import { useState, useRef, ReactNode } from "react";
 interface TitleProps {
   title: string | ReactNode;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  
 }
 
 export default function ButtonComponent({ title, onClick }: TitleProps) {

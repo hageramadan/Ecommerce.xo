@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { CgSearch } from "react-icons/cg";
 import { FaBars, FaRegUser } from "react-icons/fa";
-import { HiOutlineShoppingBag } from "react-icons/hi";
 import { LuPhone } from "react-icons/lu";
 import Link from "next/link";
 import { categories, link } from "@/Types/data";
@@ -13,6 +12,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import SearchComponent from "./SearchComponent";
 import CartSidebar from "./CartSideBar";
+import DropdownUser from "./DropdownUser";
+import { useAuth } from "@/src/context/AuthContext";
 
 export default function SearchNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,10 +21,12 @@ export default function SearchNavbar() {
   const categories2 = link;
   const links2 = categories;
 
+  const { user } = useAuth();
+
   return (
     <>
       {/* Navbar */}
-      <div className="flex items-center px-[5%]  xl:px-[10%] py-6 shadow lg:shadow-none justify-between lg:gap-10 border-b border-gray-200">
+      <div className="flex items-center px-[5%] xl:px-[10%] py-6 shadow lg:shadow-none justify-between lg:gap-10 border-b border-gray-200">
         <div className="flex items-center gap-2 lg:gap-10 lg:flex-1">
           {/* Bars Icon */}
           <div className="flex1 items-center">
@@ -77,7 +80,7 @@ export default function SearchNavbar() {
             onClick={() => setSearchOpen((prev) => !prev)}
           />
 
-          <div className="flex gap-1 cursor-pointer ">
+          <div className="flex gap-1 cursor-pointer">
             <CartSidebar />
           </div>
 
@@ -121,13 +124,22 @@ export default function SearchNavbar() {
             />
           </div>
 
-          {/* Login */}
-          <div className="hidden1 gap-1 items-center rounded-4xl bg-pro text-white py-3 text-[0.9rem] px-4 cursor-pointer">
-            <FaRegUser size={15} />
-            <Link href="/login">تسجيل دخول</Link>
-          </div>
+          {/* ✅ Login / User Dropdown */}
+          {!user ? (
+            <Link
+              href="/login"
+              className="hidden1 flex gap-1 items-center rounded-4xl bg-pro text-white py-3 text-[0.9rem] px-4 cursor-pointer"
+            >
+              <FaRegUser size={15} />
+              تسجيل دخول
+            </Link>
+          ) : (
+            <DropdownUser />
+          )}
         </div>
       </div>
+
+      {/* ✅ Search Bar Animation */}
       <AnimatePresence>
         {searchOpen && (
           <motion.div
@@ -143,7 +155,8 @@ export default function SearchNavbar() {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Fullscreen Overlay with Animation */}
+
+      {/* ✅ Sidebar Menu Animation */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -166,7 +179,7 @@ export default function SearchNavbar() {
             >
               {/* Close Button */}
               <div className="flex justify-between shadow-2xl px-4 pb-3 mb-3">
-                <h1 className="text-2xl font-semibold ">سوق</h1>
+                <h1 className="text-2xl font-semibold">سوق</h1>
                 <button
                   aria-label="close taps"
                   onClick={() => setMenuOpen(false)}
@@ -176,7 +189,9 @@ export default function SearchNavbar() {
                 </button>
               </div>
 
-              <p className="text-[1.4rem] font-semibold  px-4 py-4">تسوق حسب الاقسام</p>
+              <p className="text-[1.4rem] font-semibold px-4 py-4">
+                تسوق حسب الاقسام
+              </p>
 
               {/* Links */}
               <nav className="grid grid-cols-2 gap-2 overflow-y-auto flex-1 px-4">

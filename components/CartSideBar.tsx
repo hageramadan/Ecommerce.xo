@@ -11,12 +11,8 @@ export default function CartSidebar() {
   const [cartOpen, setCartOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
-  const { cart, removeFromCart } = useCart();
-const total = cart.reduce((acc, item) => {
-  const price = parseFloat(item.price.replace(/[^0-9.]/g, "")) || 0;
-  const quantity = item.quantity || 1;
-  return acc + price * quantity;
-}, 0);
+  const { cart , total  } = useCart();
+
 
 const formattedTotal = total.toLocaleString("en-US", {
   minimumFractionDigits: 2,

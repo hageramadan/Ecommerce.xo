@@ -1,9 +1,44 @@
 "use client";
 import React, { useState } from "react";
 import ButtonComponent from "@/components/ButtonComponent";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [value, setValue] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  // ✅ دالة التحقق
+  const validateInput = (input: string) => {
+    const trimmed = input.trim();
+
+    // ممنوع يكون فاضي
+    if (!trimmed) return "من فضلك أدخل البريد الإلكتروني أو رقم الهاتف";
+
+    // تحقق من الإيميل
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(trimmed)) return "";
+
+    // تحقق من رقم الهاتف (مثلاً المصري 01xxxxxxxxx أو 00201xxxxxxxxx)
+    const phoneRegex = /^(?:\+?20|0)?1[0-9]{9}$/;
+    if (phoneRegex.test(trimmed)) return "";
+
+    return "من فضلك أدخل بريد إلكتروني أو رقم هاتف صالح";
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const validationError = validateInput(value);
+
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setError(""); // ✅ لو مفيش خطأ نحذف الرسالة
+    localStorage.setItem("userEmail", value.trim());
+    router.push("/signup");
+  };
 
   return (
     <div className="flex flex-col items-center bg-gray-50 px-4 py-10">
@@ -15,15 +50,16 @@ export default function Page() {
           أدخل بريدك الإلكتروني أو رقم الهاتف لتسجيل الدخول أو إنشاء حساب
         </p>
 
-        <form className="space-y-6">
-          {/* input مع label يطلع على الحدود */}
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="relative w-full">
             <input
               id="userInput"
               type="text"
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              className="peer w-full border border-gray-300 rounded-lg px-3 pt-4 pb-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-500 transition-all"
+              className={`peer w-full border ${
+                error ? "border-red-500" : "border-gray-300"
+              } rounded-lg px-3 pt-4 pb-2 text-gray-800 placeholder-transparent focus:outline-none focus:border-blue-500 transition-all`}
               placeholder="أدخل بريدك الإلكتروني أو رقم الهاتف"
             />
             <label
@@ -36,7 +72,15 @@ export default function Page() {
             </label>
           </div>
 
-          <ButtonComponent title="تسجيل الدخول" />
+         
+          {error && (
+            <p className="text-red-500 text-sm text-right -mt-3">{error}</p>
+          )}
+
+          <ButtonComponent
+            title="تسجيل الدخول"
+            onClick={handleSubmit}
+          />
         </form>
       </div>
     </div>

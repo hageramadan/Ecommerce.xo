@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/src/context/CartContext";
 import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "@/src/context/AuthContext";
 
 export const metadata: Metadata = {
   title: "Ecommerce",
@@ -19,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className="bg-white text-gray-900">
-        <CartProvider>
-          <Navbar />
-          {children}
-          <Toaster position="top-center" />
-          <Footer />
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Toaster position="top-center" />
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
