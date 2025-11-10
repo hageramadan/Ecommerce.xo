@@ -1,6 +1,9 @@
+'use client'
+import ButtonComponent from "./ButtonComponent";
 import CateNavbar from "./cateNavbar";
 import LangNavbar from "./langNavbar";
 import SearchNavbar from "./searchNavbar";
+
 
 
 export default function Navbar() {
@@ -9,6 +12,8 @@ export default function Navbar() {
     <LangNavbar />
      <SearchNavbar/>
      <CateNavbar/>
+ 
+
     </>
   )
 }

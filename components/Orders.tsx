@@ -24,7 +24,7 @@ export default function Orders() {
   };
 
   return (
-    <div>
+    <div >
       {ordersData.length > 0 ? (
         <div>
           <div className="border border-gray-200 rounded-xl p-4 mb-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">

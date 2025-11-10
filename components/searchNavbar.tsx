@@ -14,14 +14,15 @@ import SearchComponent from "./SearchComponent";
 import CartSidebar from "./CartSideBar";
 import DropdownUser from "./DropdownUser";
 import { useAuth } from "@/src/context/AuthContext";
-
+import ButtonComponent from "./ButtonComponent";
+import { signOut } from "next-auth/react";
 export default function SearchNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const categories2 = link;
   const links2 = categories;
 
-  const { user } = useAuth();
+  const { userName  } = useAuth();
 
   return (
     <>
@@ -125,7 +126,7 @@ export default function SearchNavbar() {
           </div>
 
           {/* ✅ Login / User Dropdown */}
-          {!user ? (
+          {!userName  ? (
             <Link
               href="/login"
               className="hidden1 flex gap-1 items-center rounded-4xl bg-pro text-white py-3 text-[0.9rem] px-4 cursor-pointer"
@@ -136,6 +137,7 @@ export default function SearchNavbar() {
           ) : (
             <DropdownUser />
           )}
+            
         </div>
       </div>
 

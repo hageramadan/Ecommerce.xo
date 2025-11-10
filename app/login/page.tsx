@@ -1,25 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ButtonComponent from "@/components/ButtonComponent";
+import { signIn, useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  const { data: session, status } = useSession();
 
-  // ✅ دالة التحقق
   const validateInput = (input: string) => {
     const trimmed = input.trim();
-
-    // ممنوع يكون فاضي
     if (!trimmed) return "من فضلك أدخل البريد الإلكتروني أو رقم الهاتف";
 
-    // تحقق من الإيميل
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailRegex.test(trimmed)) return "";
 
-    // تحقق من رقم الهاتف (مثلاً المصري 01xxxxxxxxx أو 00201xxxxxxxxx)
     const phoneRegex = /^(?:\+?20|0)?1[0-9]{9}$/;
     if (phoneRegex.test(trimmed)) return "";
 
@@ -35,10 +32,20 @@ export default function Page() {
       return;
     }
 
-    setError(""); // ✅ لو مفيش خطأ نحذف الرسالة
+    setError("");
     localStorage.setItem("userEmail", value.trim());
     router.push("/signup");
   };
+
+  // عند تسجيل الدخول بنجاح، نخزن البيانات
+  useEffect(() => {
+    if (status === "authenticated" && session?.user) {
+      localStorage.setItem("userEmail", session.user.email || "");
+      localStorage.setItem("userName", session.user.name || "");
+      localStorage.setItem("userImage", session.user.image || "");
+      router.push("/"); // تحويل للصفحة الرئيسية
+    }
+  }, [status, session, router]);
 
   return (
     <div className="flex flex-col items-center bg-gray-50 px-4 py-10">
@@ -72,14 +79,32 @@ export default function Page() {
             </label>
           </div>
 
-         
           {error && (
             <p className="text-red-500 text-sm text-right -mt-3">{error}</p>
           )}
 
+          <ButtonComponent title="تسجيل الدخول" onClick={handleSubmit} />
+          
+<ButtonComponent
+  title="تسجيل الدخول باستخدام Google"
+  onClick={async () => {
+    try {
+      const response = await signIn("google", {
+        prompt: "select_account",
+        redirect: false, // مهم عشان الصفحة ما تتحركش
+      });
+      console.log("Google SignIn response:", response);
+      // الصفحة هتفضل ثابتة هنا
+    } catch (error) {
+      console.error("Error during Google SignIn:", error);
+    }
+  }}
+/>
+
+
           <ButtonComponent
-            title="تسجيل الدخول"
-            onClick={handleSubmit}
+            title="تسجيل الخروج"
+            onClick={() => signOut({ callbackUrl: "/login" })}
           />
         </form>
       </div>

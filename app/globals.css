@@ -269,3 +269,11 @@
 .link-container {
   text-align: center;
 }
+
+
+
+.help{
+  background-image: url('/images/help.png');
+  transform: scaleX(-1);
+
+}

@@ -14,7 +14,7 @@ export default function MyAccountLayout({
   const active = pathname.split("/").pop() || "account";
 
   return (
-    <div className="px-5 xl:px-[10%] lg:px-[5%] py-6 grid grid-cols-12 gap-1 lg:gap-5 bg-gray-50 min-h-screen">
+    <div className="px-5 xl:px-[10%] lg:px-[5%] py-6 grid grid-cols-12 gap-1 lg:gap-5  min-h-screen">
  
       <div className="col-span-12 lg:col-span-4 xl:col-span-2">
         <SideBar active={active} />

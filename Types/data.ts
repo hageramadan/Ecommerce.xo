@@ -529,6 +529,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+    quantity:2
   },
    {
     id: 11,
@@ -540,6 +541,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+     quantity:2
   },
    {
     id: 21,
@@ -551,6 +553,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+     quantity:2
   },
    {
     id: 14,
@@ -562,6 +565,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+     quantity:2
   },
    {
     id: 122,
@@ -573,6 +577,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+     quantity:2
   },
    {
     id: 41,
@@ -584,6 +589,7 @@ export const products:ProductIn [] = [
     discount: 16,
     categorySlug: "furniture",
     categoryName: "الأثاث",
+     quantity:2
   },
   {
     id: 2,
@@ -592,6 +598,7 @@ export const products:ProductIn [] = [
     price: "950",
     categorySlug: "office-furniture",
     categoryName: "أثاث مكتبي",
+     quantity:2
   },
   {
     id: 3,
@@ -600,6 +607,7 @@ export const products:ProductIn [] = [
     price: "250",
     categorySlug: "lighting",
     categoryName: "الاضاءة",
+     quantity:2
   },
   {
     id: 4,
@@ -608,6 +616,7 @@ export const products:ProductIn [] = [
     price: "780",
     categorySlug: "fabrics-bedding",
     categoryName: "أقمشة و مفروشات",
+     quantity:2
   },
   {
     id: 5,
@@ -616,6 +625,7 @@ export const products:ProductIn [] = [
     price: "1500",
     categorySlug: "outdoor-furniture",
     categoryName: "أثاث خارجي",
+     quantity:2
   },
 ];
 

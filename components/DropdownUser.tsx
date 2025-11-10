@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { signOut } from "next-auth/react";
 import {
   FaAngleDown,
   FaHeart,
@@ -21,7 +22,14 @@ export default function DropdownUser() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const { user, logout } = useAuth();
+  const { userName, logout } = useAuth();
+  const [userImage, setUserImage] = useState<string | null>(null);
+
+  // تحميل الصورة من localStorage (لو موجودة)
+  useEffect(() => {
+    const storedImage = localStorage.getItem("userImage");
+    if (storedImage) setUserImage(storedImage);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -30,17 +38,20 @@ export default function DropdownUser() {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (!user) return null;
+  if (!userName) return null;
 
   const handleLinkClick = () => setOpen(false);
 
   const handleLogout = () => {
-    logout(); 
-    setOpen(false);
-    router.push("/login");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userImage");
+    logout();
+    signOut({ callbackUrl: "/login" });
   };
 
   return (
@@ -50,12 +61,19 @@ export default function DropdownUser() {
         className="flex items-center gap-3 bg-gray-100 text-gray-700 cursor-pointer p-2 rounded"
         onClick={() => setOpen(!open)}
       >
-        <FaRegUser size={20} />
+        {userImage ? (
+          <img
+            src={userImage}
+            alt="User"
+            className="w-8 h-8 rounded-full object-cover"
+          />
+        ) : (
+          <FaRegUser size={20} />
+        )}
         <div className="hidden2 flex-col">
           <p>
-            أهلاً ,<span> {user}</span>
+            أهلاً ,<span> {userName}</span>
           </p>
-          <p>حسابي</p>
         </div>
         <FaAngleDown className="hidden2" />
       </div>
@@ -75,35 +93,35 @@ export default function DropdownUser() {
           </div>
         </Link>
 
-        <Link href="/orders" onClick={handleLinkClick}>
+        <Link href="/myAccount/orders" onClick={handleLinkClick}>
           <div className="flex items-center gap-3 hover:bg-blue-100 cursor-pointer p-2 rounded">
             <FaClipboardCheck size={18} className="text-pro" />
             <p>طلباتي</p>
           </div>
         </Link>
 
-        <Link href="/favorites" onClick={handleLinkClick}>
+        <Link href="/myAccount/favorites" onClick={handleLinkClick}>
           <div className="flex items-center gap-3 hover:bg-blue-100 cursor-pointer p-2 rounded">
             <FaHeart size={18} className="text-pro" />
             <p>منتجاتي المفضلة</p>
           </div>
         </Link>
 
-        <Link href="/addresses" onClick={handleLinkClick}>
+        <Link href="/myAccount/addresses" onClick={handleLinkClick}>
           <div className="flex items-center gap-3 hover:bg-blue-100 cursor-pointer p-2 rounded">
             <FaMapLocationDot size={18} className="text-pro" />
             <p>إدارة العناوين</p>
           </div>
         </Link>
 
-        <Link href="/help" onClick={handleLinkClick}>
+        <Link href="/myAccount/help" onClick={handleLinkClick}>
           <div className="flex items-center gap-3 hover:bg-blue-100 cursor-pointer p-2 rounded">
             <FaQuestionCircle size={18} className="text-pro" />
             <p>مركز المساعدة</p>
           </div>
         </Link>
 
-        {/* ✅ تسجيل الخروج */}
+        {/* تسجيل الخروج */}
         <div
           onClick={handleLogout}
           className="flex items-center gap-3 hover:bg-blue-100 cursor-pointer text-gray-400 p-2 rounded"

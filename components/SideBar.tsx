@@ -14,6 +14,7 @@ export default function SideBar({ active }: SideBarProps) {
     { key: "orders", label: "طلباتي", href: "/myAccount/orders" },
     { key: "favorites", label: "منتجاتي المفضلة", href: "/myAccount/favorites" },
     { key: "addresses", label: "إدارة العناوين", href: "/myAccount/addresses" },
+    { key: "help", label: "مركز المساعدة", href: "/myAccount/help" },
   ];
 
   return (
