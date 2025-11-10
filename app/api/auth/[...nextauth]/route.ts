@@ -8,7 +8,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope: "openid email profile", // مهم لجلب البيانات
+          scope: "openid email profile",
         },
       },
     }),
@@ -25,6 +25,7 @@ const handler = NextAuth({
           });
           const data = await res.json() as { picture?: string };
           token.image = data.picture ?? null;
+          token.provider = account.provider;
         } catch (err) {
           console.log("Error fetching Google profile image:", err);
           token.image = null;

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { IoLocationSharp } from "react-icons/io5";
-import TestSession from "./test";
-import Profile from "./test";
+
 
 export default function Footer() {
   const Links = [
@@ -51,7 +50,6 @@ export default function Footer() {
   ];
   return (
     <>
-    <Profile/>
     <div className="text-white bg-pro px-5 lg:px-[18%] pb-20 pt-10 gap-4">
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">

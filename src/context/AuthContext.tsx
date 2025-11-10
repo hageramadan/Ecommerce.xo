@@ -16,29 +16,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [userName, setUserName] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [userImage, setUserImage] = useState<string | null>(null);
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    if (session?.user?.name) {
-      setUserName(session.user.name);
+    if (status === "authenticated" && session?.user) {
+      setUserName(session.user.name || null);
       setUserEmail(session.user.email || null);
       setUserImage(session.user.image || null);
 
-      localStorage.setItem("userName", session.user.name);
+      localStorage.setItem("userName", session.user.name || "");
       if (session.user.email) localStorage.setItem("userEmail", session.user.email);
-      if (session.user.image) localStorage.setItem("userImage", session.user.image);
-    } else {
+      // ❌ لا تخزني الصورة لأنها مؤقتة من Google
+    } else if (status === "unauthenticated") {
+      // load from localStorage only لو مش مسجلة دخول
       const storedName = localStorage.getItem("userName");
       const storedEmail = localStorage.getItem("userEmail");
-      const storedImage = localStorage.getItem("userImage");
 
       if (storedName) setUserName(storedName);
       if (storedEmail) setUserEmail(storedEmail);
-      if (storedImage) setUserImage(storedImage);
     }
-  }, [session]);
+  }, [session, status]);
 
   const login = (name: string, email?: string, image?: string) => {
     setUserName(name);
@@ -47,23 +46,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     localStorage.setItem("userName", name);
     if (email) localStorage.setItem("userEmail", email);
-    if (image) localStorage.setItem("userImage", image);
   };
 
   const logout = () => {
     setUserName(null);
     setUserEmail(null);
     setUserImage(null);
-
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userEmail");
-    localStorage.removeItem("userImage");
-
-    nextAuthSignOut({ callbackUrl: "/login" }); 
+    localStorage.clear();
+    nextAuthSignOut({ callbackUrl: "/login" });
   };
 
   return (
-    <AuthContext.Provider value={{ userName, userEmail, userImage, login, logout }}>
+    <AuthContext.Provider
+      value={{ userName, userEmail, userImage, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

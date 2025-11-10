@@ -17,20 +17,13 @@ import {
 } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/src/context/AuthContext";
+import Image from "next/image";
 
 export default function DropdownUser() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const { userName, logout } = useAuth();
-  const [userImage, setUserImage] = useState<string | null>(null);
-
-  // تحميل الصورة من localStorage (لو موجودة)
-  useEffect(() => {
-    const storedImage = localStorage.getItem("userImage");
-    if (storedImage) setUserImage(storedImage);
-  }, []);
-
+  const { userName, userImage, logout } = useAuth();
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -38,8 +31,7 @@ export default function DropdownUser() {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   if (!userName) return null;
@@ -62,14 +54,17 @@ export default function DropdownUser() {
         onClick={() => setOpen(!open)}
       >
         {userImage ? (
-          <img
+          <Image
             src={userImage}
             alt="User"
-            className="w-8 h-8 rounded-full object-cover"
+            width={32}
+            height={32}
+            className="rounded-full object-cover"
           />
         ) : (
           <FaRegUser size={20} />
         )}
+
         <div className="hidden2 flex-col">
           <p>
             أهلاً ,<span> {userName}</span>
